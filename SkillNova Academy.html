@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>SkillNova Academy</title>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;800&family=Noto+Naskh+Arabic:wght@400;700&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#f6f8ff;--fg:#0b1230;--card:#fff;--mut:#5b6486;--bd:#dfe4f5;--blue:#2f6bff;--pur:#7c4dff;--nav:#0b1230;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#070c20;--fg:#eef1ff;--card:#111a3a;--mut:#9aa5d1;--bd:#243061}}
+:root[data-theme="dark"]{--bg:#070c20;--fg:#eef1ff;--card:#111a3a;--mut:#9aa5d1;--bd:#243061}
+*{box-sizing:border-box}html{scroll-padding-top:env(safe-area-inset-top,0px)}
+body{margin:0;background:var(--bg);color:var(--fg);font:16px/1.6 'Plus Jakarta Sans',system-ui,sans-serif}
+[dir=rtl] body,[dir=rtl] button,[dir=rtl] input,[dir=rtl] select{font-family:'Noto Naskh Arabic',system-ui,sans-serif}
+a{color:inherit}button,input,select,textarea{font:inherit;color:inherit}
+header{background:var(--nav);color:#fff;position:sticky;top:env(safe-area-inset-top,0px);z-index:5}
+.bar{max-width:1100px;margin:auto;display:flex;align-items:center;gap:14px;padding:12px 18px;flex-wrap:wrap}
+.logo{font-weight:800;font-size:20px;text-decoration:none;margin-inline-end:auto}.logo b{background:linear-gradient(90deg,#5b8cff,#a98bff);-webkit-background-clip:text;background-clip:text;color:transparent}
+nav a{color:#cdd6ff;text-decoration:none;margin-inline:8px;cursor:pointer}nav a:hover{color:#fff}
+.btn{border:0;border-radius:10px;padding:10px 18px;font-weight:600;cursor:pointer;background:var(--blue);color:#fff;text-decoration:none;display:inline-block}
+.btn.alt{background:transparent;border:1px solid var(--bd);color:inherit}.btn.pur{background:var(--pur)}.btn.sm{padding:6px 12px;font-size:14px}.btn.bad{background:#d33}
+.btn:focus-visible,input:focus-visible,select:focus-visible,a:focus-visible{outline:3px solid #8aa8ff;outline-offset:2px}
+.chip{background:transparent;border:1px solid rgba(255,255,255,.35);color:#fff;border-radius:8px;padding:4px 10px;cursor:pointer}
+main{max-width:1100px;margin:auto;padding:24px 18px 60px}
+.hero{background:linear-gradient(135deg,#0b1230 55%,#3a2a8f);color:#fff;border-radius:20px;padding:56px 30px;margin-bottom:34px}
+.hero h1{font-size:clamp(30px,5vw,52px);line-height:1.1;margin:0 0 14px;max-width:640px}.hero p{max-width:540px;color:#cdd6ff;margin:0 0 24px}
+.hero .btn{margin-inline-end:10px}
+h2{font-size:26px;margin:34px 0 14px}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:16px}
+.card{background:var(--card);border:1px solid var(--bd);border-radius:14px;overflow:hidden}
+.card .pad{padding:14px 16px}.thumb{height:120px;display:grid;place-items:center;font-size:34px;color:#fff}
+.mut{color:var(--mut);font-size:14px}.price{font-weight:800;color:var(--blue)}.old{text-decoration:line-through;color:var(--mut);font-weight:400;font-size:14px}
+.cats{display:flex;flex-wrap:wrap;gap:8px}.cat{border:1px solid var(--bd);background:var(--card);border-radius:20px;padding:6px 14px;cursor:pointer}.cat.on{background:var(--blue);color:#fff;border-color:var(--blue)}
+.row{display:flex;gap:10px;flex-wrap:wrap;margin:12px 0}input,select,textarea{background:var(--card);border:1px solid var(--bd);border-radius:10px;padding:10px 12px;width:100%}
+.row input,.row select{width:auto;flex:1;min-width:150px}
+label{display:block;margin:10px 0 4px;font-weight:600;font-size:14px}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:20px}@media(max-width:760px){.two{grid-template-columns:1fr}}
+.player{display:grid;grid-template-columns:300px 1fr;gap:18px}@media(max-width:820px){.player{grid-template-columns:1fr}}
+.vid{aspect-ratio:16/9;background:#050818;border-radius:14px;display:grid;place-items:center;color:#9aa5d1;text-align:center;padding:20px}
+.les{display:flex;justify-content:space-between;gap:8px;width:100%;text-align:start;background:none;border:0;border-bottom:1px solid var(--bd);padding:9px 12px;cursor:pointer;font-size:14px}.les.on{background:rgba(47,107,255,.14)}
+.bt{height:8px;background:var(--bd);border-radius:6px;overflow:hidden}.bt i{display:block;height:100%;background:linear-gradient(90deg,var(--blue),var(--pur))}
+table{width:100%;border-collapse:collapse;font-size:14px}th,td{padding:8px;border-bottom:1px solid var(--bd);text-align:start}.tw{overflow-x:auto}
+.tag{border-radius:6px;padding:2px 8px;font-size:12px;font-weight:700;background:#ffe9a8;color:#5a4200}.tag.successful{background:#bff0cf;color:#0b4a22}.tag.rejected,.tag.failed{background:#ffc9c9;color:#6b0f0f}
+.note{border:1px dashed var(--pur);border-radius:12px;padding:12px 14px;background:rgba(124,77,255,.08);font-size:14px;margin:12px 0}
+details{border-bottom:1px solid var(--bd);padding:10px 0}summary{cursor:pointer;font-weight:600}
+footer{text-align:center;color:var(--mut);padding:30px 18px;font-size:14px;border-top:1px solid var(--bd)}
+#toast{position:fixed;bottom:calc(20px + env(safe-area-inset-bottom,0px));inset-inline:0;margin:auto;width:max-content;max-width:90%;background:var(--fg);color:var(--bg);padding:10px 18px;border-radius:10px;display:none;z-index:9}
+</style></head><body>
+<header><div class="bar"><a class="logo" href="#/">Skill<b>Nova</b> Academy</a>
+<nav id="nav"></nav><button class="chip" id="lang"></button><button class="chip" id="theme" aria-label="Theme">◐</button></div></header>
+<main id="app"></main>
+<footer><div id="ft"></div></footer><div id="toast" role="status"></div>
+<script>
+const T={en:{home:'Home',courses:'Courses',dash:'My Learning',admin:'Admin',login:'Login',out:'Log out',h1:'Master Digital Skills. Build Your Future.',sub:'Learn AI, build websites, and develop practical digital skills through affordable online courses.',explore:'Explore Courses',start:'Start Learning',feat:'Featured courses',cats:'Categories',all:'All',buy:'Buy now',enroll:'Enroll now',free:'Free',faq:'Frequently asked questions',tag:'Learn Skills. Build Your Future.'},
+ur:{home:'ہوم',courses:'کورسز',dash:'میری تعلیم',admin:'ایڈمن',login:'لاگ اِن',out:'لاگ آؤٹ',h1:'ڈیجیٹل مہارتیں سیکھیں۔ اپنا مستقبل بنائیں۔',sub:'سستے آن لائن کورسز کے ذریعے AI، ویب سائٹس اور عملی ڈیجیٹل مہارتیں سیکھیں۔',explore:'کورسز دیکھیں',start:'سیکھنا شروع کریں',feat:'نمایاں کورسز',cats:'زمرے',all:'سب',buy:'ابھی خریدیں',enroll:'داخلہ لیں',free:'مفت',faq:'اکثر پوچھے گئے سوالات',tag:'مہارتیں سیکھیں۔ مستقبل بنائیں۔'}};
+const CATS=['Vibe Coding with AI','AI Tools and Automation','Website Development','Mobile App Development','Graphic Design','Video Editing','Freelancing','Digital Marketing','Python Programming','Online Business'];
+const MODS=['Introduction to vibe coding','Understanding AI coding tools','Writing effective prompts','Building a website using AI','Creating responsive layouts','Adding databases and authentication','Developing useful web applications','Testing and fixing errors','Publishing a website online','Creating a portfolio project'];
+const mk=(id,t,c,p,lvl,hrs,mods)=>({id,title:t,cat:c,price:p,level:lvl,hours:hrs,pub:true,instr:'SkillNova Instructor',desc:'Practical recorded lessons with PDF notes and assignments.',mods});
+const seed=()=>({courses:[
+ {...mk('vibe','Vibe Coding Masterclass: Build Websites with AI',0,4999,'Beginner',12,MODS.map((m,i)=>({t:m,ls:[{id:`v${i}a`,t:'Video lesson',pv:i==0},{id:`v${i}b`,t:'PDF notes'},{id:`v${i}c`,t:'Practical assignment'}]}))),discount:1000},
+ ...[[1,'AI Tools for Everyday Work',2499],[2,'Build Your First Website',3499],[4,'Graphic Design Basics',2999],[6,'Start Freelancing in Pakistan',1999],[8,'Python for Beginners',3999]].map(([c,t,p],i)=>mk('c'+i,t,c,p,'Beginner',6,[{t:'Getting started',ls:[{id:`c${i}a`,t:'Welcome',pv:true},{id:`c${i}b`,t:'Core lesson'}]}]))],
+ orders:[],users:[],progress:{},saved:[],coupons:{SKILL10:10},user:null,seq:1});
+let S;try{S=JSON.parse(localStorage.getItem('sn')||'null')}catch(e){}S=S||seed();
+const save=()=>{try{localStorage.setItem('sn',JSON.stringify(S))}catch(e){}};
+let lang='en',q='',fc=-1,maxp=99999;const $=s=>document.querySelector(s),t=k=>T[lang][k]||k;
+const toast=m=>{const e=$('#toast');e.textContent=m;e.style.display='block';setTimeout(()=>e.style.display='none',2600)};
+const price=c=>c.price-(c.discount||0); // server-side in a real build
+const owned=id=>S.user&&(S.user.role=='admin'||S.orders.some(o=>o.uid==S.user.email&&o.cid==id&&o.status=='successful'));
+const lessons=c=>c.mods.flatMap(m=>m.ls);
+const pct=c=>{const L=lessons(c),d=S.progress[S.user?.email]||{};return L.length?Math.round(L.filter(l=>d[l.id]).length/L.length*100):0};
+const grad=i=>`linear-gradient(135deg,hsl(${220+i*14},80%,45%),hsl(${260+i*10},70%,40%))`;
+const card=c=>`<a class="card" href="#/course/${c.id}" style="text-decoration:none"><div class="thumb" style="background:${grad(c.cat)}">▶</div><div class="pad"><div class="mut">${CATS[c.cat]}</div><b>${c.title}</b><div class="mut">${c.level} · ${c.hours}h</div><div class="price">${price(c)?'Rs '+price(c).toLocaleString():t('free')} ${c.discount?`<span class="old">Rs ${c.price.toLocaleString()}</span>`:''}</div></div></a>`;
+const faqs=[['How do I pay?','Send the fee by JazzCash or Easypaisa, then submit your order number and transaction reference. Access starts after our team verifies it.'],['Can I watch on my phone?','Yes. The site works on Android, tablets and computers.'],['Can I get a refund?','See the Refund Policy page. Requests are reviewed case by case.']];
+function nav(){$('#nav').innerHTML=`<a href="#/">${t('home')}</a><a href="#/courses">${t('courses')}</a>${S.user?`<a href="#/dash">${t('dash')}</a>`:''}${S.user?.role=='admin'?`<a href="#/admin">${t('admin')}</a>`:''}${S.user?`<a id="out">${t('out')}</a>`:`<a href="#/login">${t('login')}</a>`}`;
+ $('#lang').textContent=lang=='en'?'اردو':'EN';$('#ft').innerHTML=`<b>${t('tag')}</b><br>Demo prototype · Privacy · Terms · Refund Policy · Contact: support@skillnova.example`;
+ const o=$('#out');if(o)o.onclick=()=>{S.user=null;save();location.hash='#/';render()}}
+function list(){const r=S.courses.filter(c=>c.pub&&(fc<0||c.cat==fc)&&price(c)<=maxp&&c.title.toLowerCase().includes(q.toLowerCase()));return r.length?r.map(card).join(''):'<p class="mut">No courses match. Clear a filter to see more.</p>'}
+const views={
+home:()=>`<section class="hero"><h1>${t('h1')}</h1><p>${t('sub')}</p><a class="btn" href="#/courses">${t('explore')}</a><a class="btn pur" href="#/${S.user?'dash':'login'}">${t('start')}</a></section>
+<h2>${t('feat')}</h2><div class="grid">${S.courses.slice(0,3).map(card).join('')}</div>
+<h2>${t('cats')}</h2><div class="cats">${CATS.map((c,i)=>`<a class="cat" href="#/courses" data-c="${i}">${c}</a>`).join('')}</div>
+<h2>Why SkillNova</h2><div class="grid">${['Prices in PKR','Recorded lessons + PDF notes','Track your progress','Certificates on completion'].map(x=>`<div class="card pad">${x}</div>`).join('')}</div>
+<h2>${t('faq')}</h2>${faqs.map(f=>`<details><summary>${f[0]}</summary><p>${f[1]}</p></details>`).join('')}`,
+courses:()=>`<h2>${t('courses')}</h2><div class="row"><input id="q" placeholder="Search courses" value="${q}"><select id="mp"><option value="99999">Any price</option><option value="2500">Up to Rs 2,500</option><option value="4000">Up to Rs 4,000</option></select></div>
+<div class="cats"><span class="cat ${fc<0?'on':''}" data-c="-1">${t('all')}</span>${CATS.map((c,i)=>`<span class="cat ${fc==i?'on':''}" data-c="${i}">${c}</span>`).join('')}</div><div class="grid" id="lst" style="margin-top:16px">${list()}</div>`,
+course:id=>{const c=S.courses.find(x=>x.id==id);if(!c)return'<p>Course not found.</p>';const own=owned(id),pend=S.user&&S.orders.find(o=>o.uid==S.user.email&&o.cid==id&&o.status=='pending');
+ return`<div class="two"><div><div class="mut">${CATS[c.cat]}</div><h1>${c.title}</h1><p>${c.desc}</p><p class="mut">${c.instr} · ${c.level} · ${c.hours} hours</p>
+ <h2>Syllabus</h2>${c.mods.map(m=>`<details><summary>${m.t}</summary>${m.ls.map(l=>`<div class="mut">${l.t} ${l.pv?'(free preview)':''}</div>`).join('')}</details>`).join('')}</div>
+ <div class="card pad" style="align-self:start"><div class="thumb" style="background:${grad(c.cat)};border-radius:10px">▶</div><p class="price" style="font-size:24px">${price(c)?'Rs '+price(c).toLocaleString():t('free')}</p>
+ ${own?`<a class="btn" href="#/learn/${id}">Continue learning</a>`:pend?'<span class="tag">Payment pending verification</span>':`<a class="btn" href="#/checkout/${id}">${price(c)?t('buy'):t('enroll')}</a> <a class="btn alt" href="#/learn/${id}">Free preview</a>`}
+ ${S.user?`<button class="btn alt sm" id="sv">${S.saved.includes(id)?'Saved ✓':'Save'}</button>`:''}</div></div>`},
+login:()=>`<div class="card pad" style="max-width:420px;margin:auto"><h2 style="margin-top:0">Log in or sign up</h2><div class="note">Demo mode: no real accounts. Use <b>admin@skillnova.demo</b> to try the admin panel; any other email becomes a student.</div><label>Name</label><input id="nm"><label>Email</label><input id="em" type="email"><label>Password</label><input id="pw" type="password"><p><button class="btn" id="go">Continue</button></p></div>`,
+checkout:id=>{if(!S.user){location.hash='#/login';return''}const c=S.courses.find(x=>x.id==id);return`<div class="two"><div class="card pad"><h2 style="margin-top:0">Checkout</h2><b>${c.title}</b><p class="price" id="tot">Rs ${price(c).toLocaleString()}</p><label>Coupon code</label><input id="cp" placeholder="Try SKILL10"><p><button class="btn alt sm" id="ap">Apply</button></p></div>
+ <div class="card pad"><h2 style="margin-top:0">Pay manually</h2><div class="note"><b>Manual payment mode.</b> JazzCash / Easypaisa API is not connected. Your access starts only after an admin verifies the payment.</div>
+ <p>1. Send the amount to JazzCash <b>03XX-XXXXXXX</b> or Easypaisa <b>03XX-XXXXXXX</b> (replace with your numbers in Admin settings).<br>2. Enter the transaction reference below.</p>
+ <label>Method</label><select id="mt"><option>JazzCash</option><option>Easypaisa</option></select><label>Transaction reference</label><input id="tx"><label>Screenshot (optional, reference only)</label><input type="file" accept="image/*"><p><button class="btn" id="pay">Place order</button></p></div></div>`},
+dash:()=>{if(!S.user){location.hash='#/login';return''}const mine=S.orders.filter(o=>o.uid==S.user.email),own=S.courses.filter(c=>owned(c.id)&&S.user.role!='admin');
+ return`<h2>${t('dash')}</h2><div class="grid">${own.map(c=>`<div class="card pad"><b>${c.title}</b><div class="bt" style="margin:10px 0"><i style="width:${pct(c)}%"></i></div><span class="mut">${pct(c)}% complete</span><p><a class="btn sm" href="#/learn/${c.id}">${pct(c)?'Resume':'Start'}</a> ${pct(c)==100?'<span class="tag successful">Certificate eligible</span>':''}</p></div>`).join('')||'<p class="mut">No courses yet. Browse the catalog to enroll.</p>'}</div>
+ <h2>Purchase history</h2><div class="tw"><table><tr><th>Order</th><th>Course</th><th>Amount</th><th>Status</th></tr>${mine.map(o=>`<tr><td>${o.id}</td><td>${S.courses.find(c=>c.id==o.cid)?.title}</td><td>Rs ${o.amt}</td><td><span class="tag ${o.status}">${o.status}</span></td></tr>`).join('')}</table></div>
+ <h2>Saved</h2><div class="grid">${S.courses.filter(c=>S.saved.includes(c.id)).map(card).join('')||'<p class="mut">Nothing saved.</p>'}</div>`},
+learn:(id,lid)=>{const c=S.courses.find(x=>x.id==id);if(!c)return'<p>Not found.</p>';const own=owned(id),L=lessons(c),cur=L.find(l=>l.id==lid)||L[0],i=L.indexOf(cur),ok=own||cur.pv,d=S.progress[S.user?.email]||{};
+ return`<h2 style="margin-top:0">${c.title}</h2>${own?`<div class="bt"><i style="width:${pct(c)}%"></i></div>`:''}<div class="player"><div class="card">${c.mods.map(m=>`<div class="pad"><b>${m.t}</b></div>${m.ls.map(l=>`<button class="les ${l.id==cur.id?'on':''}" data-l="${l.id}"><span>${d[l.id]?'✓ ':''}${l.t}</span><span>${own||l.pv?'':'🔒'}</span></button>`).join('')}`).join('')}</div>
+ <div><div class="vid">${ok?`<div><b>${cur.t}</b><br>Video placeholder. In production this is a signed, time-limited URL from private storage.</div>`:'🔒 Enroll to unlock this lesson'}</div>
+ <p>${ok&&/PDF/.test(cur.t)?'<button class="btn alt sm">Download PDF (verified students only)</button>':''}</p>
+ <div class="row"><button class="btn alt" id="pv" ${i<1?'disabled':''}>Previous</button>${own?`<button class="btn pur" id="mc">${d[cur.id]?'Completed ✓':'Mark as complete'}</button>`:`<a class="btn" href="#/course/${id}">Buy to unlock</a>`}<button class="btn alt" id="nx" ${i>=L.length-1?'disabled':''}>Next</button></div></div></div>`},
+admin:()=>{if(S.user?.role!='admin')return'<p>Admins only. (A real build checks this on the server too.)</p>';const rev=S.orders.filter(o=>o.status=='successful').reduce((a,o)=>a+o.amt,0);
+ return`<h2>Admin dashboard</h2><div class="grid"><div class="card pad"><b>Rs ${rev.toLocaleString()}</b><div class="mut">Verified sales</div></div><div class="card pad"><b>${S.orders.filter(o=>o.status=='pending').length}</b><div class="mut">Pending payments</div></div><div class="card pad"><b>${S.courses.length}</b><div class="mut">Courses</div></div></div>
+ <h2>Orders</h2><div class="tw"><table><tr><th>Order</th><th>Student</th><th>Course</th><th>Ref</th><th>Amount</th><th>Status</th><th></th></tr>${S.orders.map(o=>`<tr><td>${o.id}</td><td>${o.uid}</td><td>${S.courses.find(c=>c.id==o.cid)?.title}</td><td>${o.m}: ${o.tx}</td><td>${o.amt}</td><td><span class="tag ${o.status}">${o.status}</span></td><td>${o.status=='pending'?`<button class="btn sm" data-a="successful" data-o="${o.id}">Approve</button> <button class="btn sm bad" data-a="rejected" data-o="${o.id}">Reject</button>`:''}</td></tr>`).join('')||'<tr><td colspan=7 class="mut">No orders yet.</td></tr>'}</table></div>
+ <div class="note">Approve only after you confirm the money arrived in your JazzCash/Easypaisa account. A typed reference alone is not proof.</div>
+ <h2>Courses</h2><div class="tw"><table>${S.courses.map(c=>`<tr><td>${c.title}</td><td>Rs ${c.price}</td><td>${c.pub?'Published':'Draft'}</td><td><button class="btn alt sm" data-t="${c.id}">${c.pub?'Unpublish':'Publish'}</button> <button class="btn bad sm" data-d="${c.id}">Delete</button></td></tr>`).join('')}</table></div>
+ <h2>Add course</h2><div class="card pad"><label>Title</label><input id="ct"><label>Category</label><select id="cc">${CATS.map((c,i)=>`<option value="${i}">${c}</option>`).join('')}</select><label>Price (PKR)</label><input id="cpz" type="number" value="1999"><p><button class="btn" id="ac">Save course</button></p></div>`}};
+function render(){nav();document.documentElement.dir=lang=='ur'?'rtl':'ltr';document.documentElement.lang=lang;const[,p,a,b]=location.hash.split('/');const v=views[p||'home']||views.home;$('#app').innerHTML=v(a,b);bind(p,a);scrollTo(0,0)}
+function bind(p,a){document.querySelectorAll('[data-c]').forEach(e=>e.onclick=()=>{fc=+e.dataset.c;if(p=='courses')render()});
+ if(p=='courses'){$('#q').oninput=e=>{q=e.target.value;$('#lst').innerHTML=list()};$('#mp').value=maxp;$('#mp').onchange=e=>{maxp=+e.target.value;$('#lst').innerHTML=list()}}
+ if(p=='course'&&$('#sv'))$('#sv').onclick=()=>{S.saved=S.saved.includes(a)?S.saved.filter(x=>x!=a):[...S.saved,a];save();render()};
+ if(p=='login')$('#go').onclick=()=>{const em=$('#em').value.trim().toLowerCase();if(!/.+@.+/.test(em)||!$('#pw').value)return toast('Enter a valid email and password.');S.user={email:em,name:$('#nm').value||em,role:em=='admin@skillnova.demo'?'admin':'student'};save();location.hash='#/dash'};
+ if(p=='checkout'){const c=S.courses.find(x=>x.id==a);let off=0;$('#ap').onclick=()=>{const v=S.coupons[$('#cp').value.trim().toUpperCase()];if(!v)return toast('Invalid coupon code.');off=v;$('#tot').textContent='Rs '+Math.round(price(c)*(100-off)/100).toLocaleString();toast('Coupon applied')};
+  $('#pay').onclick=()=>{const tx=$('#tx').value.trim();if(tx.length<6)return toast('Enter the transaction reference from your payment app.');if(S.orders.some(o=>o.tx==tx))return toast('This reference was already used.');
+  S.orders.push({id:'SN-'+(1000+S.seq++),uid:S.user.email,cid:a,amt:Math.round(price(c)*(100-off)/100),m:$('#mt').value,tx,status:'pending'});save();toast('Order placed. Waiting for verification.');location.hash='#/dash'}}
+ if(p=='learn'){const L=lessons(S.courses.find(x=>x.id==a)),cur=L.find(l=>l.id==location.hash.split('/')[3])||L[0],i=L.indexOf(cur),go=l=>location.hash=`#/learn/${a}/${l.id}`;
+  document.querySelectorAll('[data-l]').forEach(e=>e.onclick=()=>go(L.find(l=>l.id==e.dataset.l)));$('#pv').onclick=()=>go(L[i-1]);$('#nx').onclick=()=>go(L[i+1]);
+  const m=$('#mc');if(m)m.onclick=()=>{const d=S.progress[S.user.email]=S.progress[S.user.email]||{};d[cur.id]=!d[cur.id];save();render()}}
+ if(p=='admin'&&S.user?.role=='admin'){document.querySelectorAll('[data-a]').forEach(e=>e.onclick=()=>{S.orders.find(o=>o.id==e.dataset.o).status=e.dataset.a;save();render()});
+  document.querySelectorAll('[data-t]').forEach(e=>e.onclick=()=>{const c=S.courses.find(x=>x.id==e.dataset.t);c.pub=!c.pub;save();render()});
+  document.querySelectorAll('[data-d]').forEach(e=>e.onclick=()=>{if(confirm('Delete this course?')){S.courses=S.courses.filter(x=>x.id!=e.dataset.d);save();render()}});
+  $('#ac').onclick=()=>{const t=$('#ct').value.trim();if(!t)return toast('Add a course title.');S.courses.push(mk('n'+Date.now(),t,+$('#cc').value,+$('#cpz').value,'Beginner',1,[{t:'Module 1',ls:[{id:'n'+Date.now(),t:'Lesson 1',pv:true}]}]));save();render();toast('Course saved')}}}
+$('#lang').onclick=()=>{lang=lang=='en'?'ur':'en';render()};
+$('#theme').onclick=()=>{const r=document.documentElement,d=getComputedStyle(r).getPropertyValue('--bg').trim()=='#070c20';r.dataset.theme=d?'light':'dark'};
+addEventListener('hashchange',render);render();
+</script></body></html>
